@@ -20,13 +20,36 @@ const Navbar = () => {
 
   const navigate = useNavigate();
 
+  // access ? navigate("/") : navigate("/login");
+  /**
+   * Here we can check that user loged in or not
+   * if login then it will redirect to the home page!
+   * otherwise it will show login screen
+   */
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      // console.log("working");
-    }, 1500);
-    getAllDataFromDatabase();
-  }, []);
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        // console.log("you are logged in");
+        setTimeout(() => {
+          setLoading(false);
+          // console.log("working");
+        }, 1500);
+        getAllDataFromDatabase();
+      } else {
+        // console.log("you are not logged in");
+        navigate("/");
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //     // console.log("working");
+  //   }, 1500);
+  //   getAllDataFromDatabase();
+  // }, []);
 
   //--------------------------
   const getAllDataFromDatabase = () => {

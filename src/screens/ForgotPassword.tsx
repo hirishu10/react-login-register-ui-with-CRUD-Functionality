@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import icon from "../images/top_log.png";
 import loginImage from "../images/forgot.jpg";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,17 @@ function ForgotPassword() {
 
   const [getVerifiedEmail, setVerifiedEmail] = useState("");
   const [getNewPassword, setNewPassword] = useState("PASSWORD");
+
+  useEffect(() => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        navigate("/");
+      } else {
+        navigate("/forgotpassword");
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
 
   const restPassword = async () => {
     if (getVerifiedEmail !== "") {

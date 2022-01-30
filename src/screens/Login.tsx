@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import icon from "../images/top_log.png";
 import loginImage from "../images/login.png";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,17 @@ function Login() {
   const [subClick, setSubClick] = useState(false);
   const [getEmail, setEmail] = useState("");
   const [getPass, setPass] = useState("");
+
+  useEffect(() => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        navigate("/");
+      } else {
+        navigate("/login");
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
 
   /**
    * Below the function for login with the credentials

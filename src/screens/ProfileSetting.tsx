@@ -27,54 +27,65 @@ function ProfileSetting() {
   const [changeColor, setChangeColor] = useState("danger");
 
   // const [currentUser, setCurrentUser] = useState(auth.currentUser);
-
   useEffect(() => {
     // console.log("ProfilePhotoURL :>> ", auth.currentUser?.photoURL);
-    setEmailId(auth.currentUser?.email);
-    clearTimeout();
-    if (getEmailId !== null || getEmailId !== undefined || getEmailId !== "") {
-      try {
-        const mainCollection = firestore.collection(dbAuth, "auth");
-        const document = firestore.doc(mainCollection, `${getEmailId}`);
-        firestore.getDoc(document).then((d) => {
-          setUserId(auth.currentUser?.email);
-          setDisplayName(auth.currentUser?.displayName);
-          setUsername(d.get("userName"));
-          setFirstname(d.get("firstName"));
-          setLastname(d.get("lastName"));
-          // console.log("auth :>> ", auth.currentUser);
-          //
-          //
-          /**
-           * Below code to get the profile photo from the auth database.
-           */
-          const mainCollection2 = firestore.collection(dbAuth, "auth");
-          const document2 = firestore.doc(
-            mainCollection2,
-            `${auth.currentUser?.email}`
-          );
-          firestore
-            .getDoc(document2)
-            .then((v) => {
-              setPhotoURL(v.get("photoURL"));
-            })
-            .catch((err) => {
-              // console.log("err :>> ", err);
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        navigate("/profile");
+        setEmailId(auth.currentUser?.email);
+        clearTimeout();
+        if (
+          getEmailId !== null ||
+          getEmailId !== undefined ||
+          getEmailId !== ""
+        ) {
+          try {
+            const mainCollection = firestore.collection(dbAuth, "auth");
+            const document = firestore.doc(mainCollection, `${getEmailId}`);
+            firestore.getDoc(document).then((d) => {
+              setUserId(auth.currentUser?.email);
+              setDisplayName(auth.currentUser?.displayName);
+              setUsername(d.get("userName"));
+              setFirstname(d.get("firstName"));
+              setLastname(d.get("lastName"));
+              // console.log("auth :>> ", auth.currentUser);
+              //
+              //
+              /**
+               * Below code to get the profile photo from the auth database.
+               */
+              const mainCollection2 = firestore.collection(dbAuth, "auth");
+              const document2 = firestore.doc(
+                mainCollection2,
+                `${auth.currentUser?.email}`
+              );
+              firestore
+                .getDoc(document2)
+                .then((v) => {
+                  setPhotoURL(v.get("photoURL"));
+                })
+                .catch((err) => {
+                  // console.log("err :>> ", err);
+                });
+              //
+              //
             });
-          //
-          //
-        });
 
-        setTimeout(() => {
-          setLoading(false);
-        }, 2000);
-      } catch (error) {
-        // console.log("error :>> ", error);
+            setTimeout(() => {
+              setLoading(false);
+            }, 2000);
+          } catch (error) {
+            // console.log("error :>> ", error);
+          }
+        } else {
+          // alert("Please back and agan visit this page!");
+        }
+      } else {
+        navigate("/");
       }
-    } else {
-      // alert("Please back and agan visit this page!");
-    }
-  }, [getEmailId, getNewProfilePhoto, loading]);
+    });
+    return unsubscribe;
+  }, [getEmailId, getNewProfilePhoto, loading, navigate]);
 
   const signOut = () => {
     const message = prompt(

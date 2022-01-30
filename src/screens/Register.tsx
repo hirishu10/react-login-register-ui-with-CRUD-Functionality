@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import icon from "../images/top_log.png";
 import registerImage from "../images/register.png";
 import { auth, dbAuth } from "./Firebase";
@@ -21,6 +21,22 @@ function Register() {
   const [getUsername, setUsername] = useState("");
   const [getFirstname, setFirstname] = useState("");
   const [getLastname, setLastname] = useState("");
+
+  /**
+   * Here we can check that user loged in or not
+   * if login then it will redirect to the home page!
+   * otherwise it will show login screen
+   */
+  useEffect(() => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        navigate("/");
+      } else {
+        navigate("/register");
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
 
   /**
    * Some Function
@@ -59,7 +75,8 @@ function Register() {
           // console.log("userValue :>> ", userValue);
           // console.log("Account Created Successfully");
           setSubClick(false);
-          navigate("/");
+          auth.signOut();
+          navigate("/login");
         })
         //
         .catch((err) => {

@@ -10,11 +10,27 @@ import errorDesign from "../images/oops.jpeg";
 function ErrorPage() {
   const [darkMode, setDarkMode] = useState(false);
   const [getPhotoURL, setPhotoURL] = useState(auth.currentUser?.photoURL);
+  const [access, setAccess] = useState(false);
   const navigate = useNavigate();
 
+  /**
+   * Here we can check that user loged in or not
+   * if login then it will redirect to the home page!
+   * otherwise it will show login screen
+   */
   useEffect(() => {
     setPhotoURL(auth.currentUser?.photoURL);
-  }, []);
+    //
+    const unsubscribe = firebaseAuth.onAuthStateChanged(auth, (user) => {
+      if (user != null) {
+        setAccess(true);
+      } else {
+        setAccess(false);
+      }
+    });
+    return unsubscribe;
+  }, [navigate]);
+
   const signOut = () => {
     const message = prompt(
       "Are you sure want to logout \nPlease type YES for Logout",
@@ -68,9 +84,9 @@ function ErrorPage() {
                 <a
                   className="nav-link active"
                   aria-current="page"
-                  href="home"
+                  href={access ? "/" : "login"}
                   onClick={() => {
-                    navigate("/");
+                    access ? navigate("/") : navigate("/login");
                   }}
                 >
                   Home
@@ -260,7 +276,7 @@ function ErrorPage() {
               alt={"displayImage"}
               style={{ cursor: "pointer", borderRadius: 30 }}
               onClick={() => {
-                navigate("/profile");
+                access ? navigate("/profile") : navigate("/login");
               }}
             />
             <img
@@ -271,7 +287,9 @@ function ErrorPage() {
               height={25}
               alt={"displayImage"}
               style={{ cursor: "pointer", marginLeft: 10 }}
-              onClick={signOut}
+              onClick={() => {
+                access ? signOut() : navigate("/");
+              }}
             />
           </div>
         </div>

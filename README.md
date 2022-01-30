@@ -1,46 +1,169 @@
-# Getting Started with Create React App
+# react-login-register-ui-with-CRUD-Functionality
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Home message -->
 
-## Available Scripts
+Simple react-login-register-ui and CRUD functionality with the help of Firebase, React, CSS, Bootstrap, JavaScript JSX/Typescript.
 
-In the project directory, you can run:
+##### **Website:** https://react-login-register-ui-7386d.web.app/
 
-### `npm start`
+##### **Email:** `test@gmail.com`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### **Password:** `password`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- Contents -->
 
-### `npm test`
+# Content
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Overview](#overview)
+- [Login Home UI](#login-home-ui)
+- [Register](#register)
+- [Forgot Password](#forgot-password)
+- [CRUD](#crud)
+  1.  [Create](#create)
+  2.  [Read](#read)
+  3.  [Update](#update)
+  4.  [Delete](#delete)
+- [Like](#like)
+- [Profile Settings](#profile-settings)
+- [Logout](#logout)
+- [Author](#author)
+<!-- Contents -->
 
-### `npm run build`
+<!-- overview -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Overview
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Simple react-login-ui ↓
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/login.png" width="100%" height="100%" />
 
-### `npm run eject`
+> react-login-ui Home Page ↓
+> <img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/home_screen.png" width="100%" height="100%" />
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- overview -->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<!-- Getting Started -->
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Login Home UI
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- home -->
 
-## Learn More
+After auhthenticate the user it will render the Home Page **↓**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/home.gif" width="100%" height="100%" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- home -->
+
+# Register
+
+<!-- register -->
+
+You can register and create your own account credential for testing **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/register.gif" width="100%" height="100%" />
+
+<!-- register -->
+
+# Forgot Password
+
+<!-- forgot password -->
+
+If you provide valid email id then you will get reset password mail for the same **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/forgot_password.gif" width="100%" height="100%" />
+
+<!-- forgot password -->
+
+# CRUD
+
+<!-- CRUD -->
+
+Try the CRUD functionality **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/home_screen.png" width="100%" height="100%" />
+
+<!-- CRUD -->
+
+## Create
+
+<!-- create -->
+
+You can create many users but refresh the page after creating the same **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/create.png" width="100%" height="100%" />
+
+<!-- create -->
+
+## Read
+
+<!-- read -->
+
+You can simply read user’s data **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/read.png" width="100%" height="100%" />
+
+<!-- read -->
+
+## Update
+
+<!-- update -->
+
+You can easily update the user data but refresh the page after creating the same **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/update.png" width="100%" height="100%" />
+
+<!-- update -->
+
+## Delete
+
+<!-- delete -->
+
+You can easily delete the user data **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/delete.gif" width="100%" height="100%" />
+
+<!-- delete -->
+
+<!-- like -->
+
+# Like
+
+You can like ❤️ the user if you want 💙 **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/like.gif" width="100%" height="100%" />
+
+<!-- like -->
+
+<!-- profile settings -->
+
+# Profile Settings
+
+In the profile settings you can get the details of the current user and also user can change their profile picture **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/profile.gif" width="100%" height="100%" />
+
+<!-- profile settings -->
+
+<!-- logout -->
+
+# Logout
+
+Click the signout icon to successfully sign out the current user **↓**
+
+<img src="https://raw.githubusercontent.com/hirishu10/my-assets/main/react-login-ui/screenshot/logout.gif" width="100%" height="100%" />
+
+<!-- logout -->
+
+<!-- author  -->
+
+# Author
+
+#### Thank You All 🙏🏻
+
+Made with 🖤 by
+
+**Author** : [Rishu Chowdhary](https://github.com/hirishu10)
+
+**Email** : hi.10rishu@gmail.com
+
+<!-- author  -->

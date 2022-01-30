@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.circle-base {
+  cursor: pointer;
+  /* transition: 1s; */
+}
+
+.circle {
+  cursor: pointer;
+  /* transition: 1s; */
+}
+
+.back-circle {
+  cursor: pointer;
+  /* transition: 1s; */
+}
+
+.shadow-circle {
+  transition: 0.2s;
+  cursor: pointer;
+  margin-left: -2px;
+  padding-bottom: -2;
+  transition: 0.8s;
+}
+
+.circle-base:hover .shadow-circle {
+  /* margin-left: 25px; */
+  transition: 0.2s;
+  background-color: #1ba8fa;
+  box-shadow: 0px 0px 5px #1ba8fa;
+}
+
+.refresh-rotate {
+  transition: 0.6s;
+}
+.refresh-base .refresh-rotate:hover {
+  transition: 0.6s;
+  transform: rotate(180deg);
+}

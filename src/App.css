@@ -1,0 +1,168 @@
+body {
+  background-color: rgba(255, 255, 255, 0.766);
+}
+/*  */
+.mainDiv {
+  padding: 0;
+  margin: 0;
+  /* background-color: white; */
+}
+/*  */
+
+/* first Div */
+.firstDiv {
+  width: 100%;
+  height: 38px;
+  background-color: whitesmoke;
+  display: flex;
+}
+.first-one {
+  width: 25%;
+  height: 38px;
+  /* background-color: red; */
+  display: flex;
+}
+
+.first-two {
+  width: 25%;
+  height: 38px;
+  /* background-color: green; */
+  display: flex;
+}
+
+.first-three {
+  width: 25%;
+  height: 38px;
+  /* background-color: green; */
+  display: flex;
+}
+
+.first-four {
+  width: 25%;
+  height: 38px;
+  /* background-color: green; */
+  display: flex;
+}
+/*  */
+
+/*  */
+
+/* second Div */
+.secondDiv {
+  width: 100%;
+  height: 40px;
+  background-color: whitesmoke;
+  display: flex;
+  padding-bottom: 5px;
+}
+.second-one {
+  width: 25%;
+  height: 40px;
+  /* background-color: red; */
+  display: flex;
+}
+
+.second-two {
+  width: 25%;
+  height: 40px;
+  /* background-color: green; */
+  display: flex;
+}
+
+.second-three {
+  width: 50%;
+  height: 40px;
+  /* background-color: green; */
+  display: flex;
+}
+
+/* .second-four {
+  width: 25%;
+  height: 40px;
+  display: flex;
+} */
+/*  */
+
+/*  */
+
+/* third Div */
+.thirdDiv {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 2px;
+  display: flex;
+}
+.third-one {
+  width: 100%;
+  height: 2px;
+  /* background-color: dodgerblue; */
+  /* float: left; */
+}
+
+/* .third-two {
+  width: 25%;
+  height: 38px;
+  background-color: yellow;
+  float: left;
+}
+
+.third-three {
+  width: 25%;
+  height: 38px;
+  background-color: darkolivegreen;
+  float: left;
+}
+
+.third-four {
+  width: 25%;
+  height: 38px;
+  background-color: teal;
+  float: left;
+} */
+/*  */
+
+/* --------------------------- */
+
+/*  */
+/*  */
+/*  */
+/*  */
+
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+
+/* .App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+} */
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
